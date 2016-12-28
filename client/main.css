@@ -1,0 +1,89 @@
+#login-screen .dropdown-menu {
+	display:block;
+	width: 30%;
+	margin-left: 35%;
+	height: 510px;
+	z-index:9;
+	background-color: #F5F5F7;
+}
+
+#login-screen #login-dropdown-list {
+	display:block;
+	
+}
+
+#login-screen a.dropdown-toggle {
+	display:none;
+}
+
+#login-screen {
+	width: 100%;
+	padding-top: 100px;
+}
+
+.navigation {
+	position:fixed;
+	width: 100%;
+	height: 70px;
+	background-color: #F5F5F7;
+	border: 2px solid black;
+	z-index: 999;
+}
+
+#login-dropdown-list input:first-of-type {
+	margin: 8px 0;
+	border-radius: 0px;
+}
+
+#login-dropdown-list input:last-of-type {
+	margin: 8px 0;
+	border-radius: 0px;
+}
+
+input[type=email], input[type=password] {
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+
+}
+
+#signup-link {
+	display: inline-block;
+	font-weight:normal;
+	text-align:center;
+	vertical-align:middle;
+	touch-action:manipulation;
+	font-size:14px;
+	-webkit-appearance: button;
+	margin-top: 5px;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #ffffff;
+	background-color: #337ab7;
+}
+
+#signup-link:hover {
+	text-decoration:none;
+	background-color: #265a88;
+
+}
+
+
+#forgot-password-link {
+	margin-left: 28%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
