@@ -1,5 +1,6 @@
 Router.route('/', {
 	template: 'home'
 });
-Router.route('/hello');
-Router.route('/login');
+Router.route('/about');
+Router.route('/contact');
+

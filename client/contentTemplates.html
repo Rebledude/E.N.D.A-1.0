@@ -1,13 +1,22 @@
-<template name="home">
+<template name="dashboard">
+	<div class="navigation">
+  	  {{> navigation}}
+  	</div>
 	<h1>This is Home!</h1>
 </template>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="about">
+	<div class="navigation">
+ 	 {{> navigation}}
+  	</div>
+	<button>Click Me</button>
+  	<p>You've pressed the button {{counter}} times.</p>
 </template>
 
-<template name="info">
+<template name="contact">
+	<div class="navigation">
+ 	  {{> navigation}}
+  	</div>
   <h2>Learn Meteor!</h2>
   <ul>
     <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
@@ -21,4 +30,32 @@
 <div id="login-screen">
   {{>loginButtons}}
 </div>
+</template>
+
+<template name="navigation">
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+   <div class="container-fluid">
+	<div class="navbar-header">
+	  <a class="navbar-brand" href="/">Home</a>
+	</div>
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact">Contact us</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+	<li><button class="logout"><span class="glyphicon glyphicon-user"></span>Logout</button></li>
+    </ul>
+  </div>
+</nav></template>
+
+<template name="home">
+	{{#if currentUser}}
+		{{> dashboard}}
+	{{else}}
+		{{> login}}
+	{{/if}}
 </template>
