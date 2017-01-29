@@ -9,4 +9,15 @@ Template.navigation.events({
 	}
 });
 
+Template.dashboard.helpers({
+  name: function() {
+    return Meteor.user().profile.name;
+  }
+});
+
+Template.dashboard.helpers({
+	picture: function() {
+	return Meteor.user().profile.display_picture;
+  }
+});
 

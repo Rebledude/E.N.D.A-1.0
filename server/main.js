@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 
-Meteor.startup(() => {
+
   // code to run on server at startup
-});
+	Meteor.startup(function () {
+		Meteor.absoluteUrl.defaultOptions.rootUrl = 'http://danu7.it.nuigalway.ie:8629/';
+	});
+
