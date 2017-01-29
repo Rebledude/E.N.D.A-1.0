@@ -1,5 +1,5 @@
 # E.N.D.A-2.0
-Required packages:\n
+Required packages:
 stylus@2.513.8
 ian:accounts-ui-bootstrap-3
 iron:router
