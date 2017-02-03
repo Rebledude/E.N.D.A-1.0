@@ -11,3 +11,4 @@ accounts-facebook
 accounts-google
 accounts-twitter
 service-configuration
+scholtzm:accounts-steam
