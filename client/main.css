@@ -17,11 +17,25 @@ body, html {
 	width: 100%;
 	background-color: #F5F5F7;
 	box-shadow: 0px 0px 50px #646568;
+	position: relative;
+	padding: 10px;
 }
 
 #leaderboard {
 	border: 1px solid black;
+	width: 33%;
 	
+}
+
+#profile {
+	border: 1px solid black;
+
+}
+
+.profiler {
+	position: absolute;
+	left:0;
+	top:0;
 }
 
 .navbar-default {

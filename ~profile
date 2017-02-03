@@ -1,0 +1,2 @@
+export MONGO_URL=mongodb://mongodb2611rf:fe4myb@danu7:8717/mongodb2611
+export ROOT_URL=http://danu7.it.nuigalway.ie:8629
