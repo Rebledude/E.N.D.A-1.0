@@ -14,13 +14,15 @@
 
 
 					</div>
-					<p>{{name}} </p>				
+					<p id="name">{{name}} </p>				
 				</tr>
 				<tr>
 				</tr>
 			</td>
-			<td id = "leaderboard">
-				leaderboard
+			<td id = "leaderboarddiv">
+				<div id="leaderboard">
+					<p id="head">Leaderboard </p>
+				</div>
 			</td>
 			</tr></table>
 		</div>
@@ -28,26 +30,6 @@
 		</div>
 	</div>
 </template>
-
-
-
-<template name="help">
-  	  {{> navigation}}
-	<div class="container">
-		<div class="row">
-		<div class="col-lg-1"></div>
-		<div class="col-lg-10">
-			<table id="dash-info"><tr>
-			<td>
-				Help is on it's way!
-			</td>
-			</tr></table>
-		</div>
-		<div class="col-lg-1"></div>
-		</div>
-	</div>
-</template>
-
 
 
 <template name="contact">
@@ -96,11 +78,7 @@
 			</button>
 			<a class="navbar-brand" href="/"><span><img src="Logo.png" id="home-icon"></span>Project E.N.D.A</a>
 		</div>
-		<ul class="nav navbar-nav">
-			
-			<li><a href="contact">Contact Us</a></li>
-			<li><a href="help">About Us</a></li>
-		</ul>
+		
 		<ul class="nav navbar-nav navbar-right">
         <li><button type="button" class="logout btn btn-default navbar-btn">Logout</button></li>
 		</ul>

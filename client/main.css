@@ -21,21 +21,42 @@ body, html {
 	padding: 10px;
 }
 
-#leaderboard {
-	border: 1px solid black;
-	width: 33%;
+#leaderboarddiv {
+	position:relative;
+	width: 30%;
 	
+}
+#leaderboard {
+	position: absolute;
+	border-left: 2px solid #585d66;
+	top:10px;
+	bottom:10px;
+	width:100%;
+}
+
+#head {
+	margin-left: 90px;
+	color: #585d66;
+	font-size: 20px;
 }
 
 #profile {
-	border: 1px solid black;
-
-}
-
-.profiler {
+	margin: 5px;
 	position: absolute;
 	left:0;
 	top:0;
+	width: 69%;
+	border-bottom: 2px solid #585d66;
+}
+
+#name {
+	margin-left: 5px;
+	color: #585d66;
+}
+
+.profiler{
+	position: relative;
+	margin: 5px;
 }
 
 .navbar-default {
