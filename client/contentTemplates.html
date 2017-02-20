@@ -7,7 +7,7 @@
 				<tr id="profile">
 					<div class= "profiler">
 						{{#with currentUser}}
-							{{> avatar user=this shape="circle" size="large"}}
+							{{> avatar user=this shape="rounded" size="large"}}
 						{{/with}}
 
 
@@ -29,7 +29,10 @@
 
 <template name="leaderboard">
 	{{#each players}}
-		<p>{{profile.name}}: {{profile.score}}</p>
+		<div>
+		<div id="leaderboar-avatar">{{> avatar user=players shape ="rounded" size="small"}}</div>
+		<p id="leaderboard-player">{{profile.name}}: {{profile.score}}</p>
+		</div>
 	{{/each}}
 </template>
 

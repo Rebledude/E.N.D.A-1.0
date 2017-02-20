@@ -25,6 +25,12 @@ Template.dashboard.onCreated(function dashboardOnCreated() {
 
 Template.leaderboard.helpers({
 	players:function() {
-		return Meteor.users.find();
+		return Meteor.users.find({}, {sort: {score: -1}});
 	}
 });
+
+Avatar.setOptions({
+  defaultImageUrl: "http://www.junaati.com/img/blog/avatar.png"
+});
+
+

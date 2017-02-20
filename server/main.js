@@ -7,7 +7,7 @@ import { Meteor } from 'meteor/meteor';
 	});
 	
 	Meteor.publish('users', function (){
-		return Meteor.users.find();
+		return Meteor.users.find({}, {sort: {score: -1}});
 	});
 	
 	
