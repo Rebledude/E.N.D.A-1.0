@@ -23,17 +23,16 @@ body, html {
 }
 
 #dash-info {
-	margin-top: 40px;
-	margin-bottom: 50px;
-	min-height: 550px;
-	width: 66%;
+	height: 650px;
+	width: 59%;
 	background-color: #F5F5F7;
 	box-shadow: 0px 0px 50px #646568;
-	position: fixed;
-	top: 50%;
-	left: 50%;
 	padding: 10px;
-	transform: translate(-50%, -50%);
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	border-radius: 0px;
 }
 
 #leaderboarddiv {
@@ -41,6 +40,7 @@ body, html {
 	width: 30%;
 	
 }
+
 #leaderboard {
 	position: absolute;
 	border-left: 2px solid #585d66;
@@ -56,6 +56,7 @@ body, html {
 }
 
 #profile {
+	height: 163px;
 	margin: 5px;
 	position: absolute;
 	left:0;
@@ -67,6 +68,16 @@ body, html {
 #name {
 	margin-left: 5px;
 	color: #585d66;
+	font-size: 20px;
+}
+
+.nav-tabs{
+	position: absolute;
+	margin-top: -44px;
+}
+
+.portal {
+	margin-top: 168px;
 }
 
 .profiler{
@@ -74,12 +85,8 @@ body, html {
 	margin: 5px;
 }
 
-.navbar-default {
-	border-radius: 0px;
-}
-
-.logout {
-	text-align: right;
+.logout-align {
+	right: 30%;
 }
 
 .logo {
@@ -101,7 +108,6 @@ body, html {
 	background-color: #F5F5F7;
 	box-shadow: 0px 0px 50px #646568;
 	border-radius: 0px;
-	
 }
 
 .title{
@@ -127,8 +133,6 @@ div.enda {
 
 #login-screen a.dropdown-toggle {
 	display:none;
-	
-
 }
 
 #login-screen .dropdown-menu {
@@ -168,4 +172,13 @@ input[type=email], input[type=password] {
 
 .btn {
 	border-radius: 0px;
+}
+
+#contact {
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	color: white;
+	padding: 10px;
+	font-size: 15px;
 }
