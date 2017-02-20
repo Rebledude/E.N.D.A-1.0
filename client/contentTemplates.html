@@ -1,9 +1,7 @@
 <template name="dashboard">
   	 {{> navigation}}
 	<div class="container">
-		<div class="row">
-		<div class="col-lg-1"></div>
-		<div class="col-lg-10">
+		
 			<table id="dash-info"><tr>
 			<td>
 				<tr id="profile">
@@ -22,13 +20,17 @@
 			<td id = "leaderboarddiv">
 				<div id="leaderboard">
 					<p id="head">Leaderboard </p>
+					{{>leaderboard}}
 				</div>
 			</td>
 			</tr></table>
-		</div>
-		<div class="col-lg-1"></div>
-		</div>
 	</div>
+</template>
+
+<template name="leaderboard">
+	{{#each players}}
+		<p>{{profile.name}}: {{profile.score}}</p>
+	{{/each}}
 </template>
 
 

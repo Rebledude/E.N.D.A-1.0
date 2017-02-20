@@ -9,15 +9,22 @@ Template.navigation.events({
 	}
 });
 
+
+
 Template.dashboard.helpers({
   name: function() {
     return Meteor.user().profile.name;
   }
 });
 
-Template.dashboard.helpers({
-	picture: function() {
-	return Meteor.user().profile.display_picture;
-  }
+Template.dashboard.onCreated(function dashboardOnCreated() {
+	this.state = new ReactiveDict();
+	Meteor.subscribe('users');
 });
 
+
+Template.leaderboard.helpers({
+	players:function() {
+		return Meteor.users.find();
+	}
+});
