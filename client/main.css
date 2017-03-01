@@ -89,6 +89,43 @@ body, html {
 	right: 30%;
 }
 
+span.info{
+	background:#F5F5F7;
+	font-size: 16px;
+	height: 346px;
+	width:360px;
+	min-width:300px;
+	line-height: 20px;
+	position:absolute;
+	text-align: center;
+	top: 185px;
+	left: 0px;
+	display:none;
+	z-index: 4;
+	padding: 15px;
+	padding-top: 30px;
+}
+   
+p.about{
+	position:relative;
+}
+		
+p.about:hover span{
+	display:block;
+}
+
+.img{
+	width: 15px;
+	height: 15px;
+	margin: 5px;
+	float: left;
+	opacity: 0.5;
+}
+
+.img:hover{
+	opacity: 1;
+}
+
 .logo {
   	left: 50%;
 	position: absolute;
@@ -131,11 +168,11 @@ div.enda {
 	font-style: italic;
 }
 
-#login-screen a.dropdown-toggle {
+.login-screen a.dropdown-toggle {
 	display:none;
 }
 
-#login-screen .dropdown-menu {
+.login-screen .dropdown-menu {
 	display:block;
 	width: 360px;
 	left: 50%;
