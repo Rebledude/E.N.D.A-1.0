@@ -9,9 +9,20 @@
 					</div>
 					<p id="name">{{name}} </p>				
 				</tr>
-				<tr>
+				<tr id="main">
 				<div class="portal">
 					{{>navigation}}
+				</div>
+				<div class="tab-content">
+				<div id="feed" class="tab-pane fade in active">
+					{{>feed}}
+				</div>
+				<div id="challange" class="tab-pane fade">
+					{{>challange}}
+				</div>
+				<div id="completed" class="tab-pane fade">
+					{{>posts}}
+				</div>
 				</div>
 				</tr>
 			</td>
@@ -28,9 +39,11 @@
 
 <template name="leaderboard">
 	{{#each players}}
-		<div>
-		<div id="leaderboar-avatar">{{> avatar user=this shape ="rounded" size="small"}}</div>
-		<p id="leaderboard-player">{{profile.name}}: {{profile.score}}</p>
+		<div id="leaderboard-player">
+		<span class="player">
+		<i class="pull-right icon-chevron-left">{{> avatar user=this shape ="rounded" size="small"}}</i>
+		<span >{{profile.name}}: {{profile.score}}</span>
+		</span>
 		</div>
 	{{/each}}
 </template>
@@ -43,7 +56,7 @@
 <img src="Logo.png" class="logo"> 
 
 <p class="about">
-<img src="Info.png" class="img">
+<img src="info.png" class="img">
 <span class="info"><b>Project E.N.D.A</b> is a real world treasure hunt.
 Begin solving riddles and puzzles to find the location and go on an 
 adventre exploring all of <b>Galway City</b>.<br><br> Once you reach your
@@ -73,7 +86,7 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	<a data-toggle="tab" href="#challange">Challange</a>
   </li>
   <li class="nav-item">
-	<a data-toggle="tab" href="#completed">Completed</a>
+	<a data-toggle="tab" href="#completed">Comment</a>
   </li>
 </ul>
 <ul class="nav nav-tabs logout-align">
@@ -82,31 +95,31 @@ players to get to the top of the leaderboard and win prizes along the way!.
   </li>
 </ul>
 
-
-
-<div class="tab-content">
-	<div id="feed" class="tab-pane fade in active">
-		{{>feed}}
-	</div>
-	<div id="challange" class="tab-pane fade">
-		{{>challange}}
-	</div>
-	<div id="completed" class="tab-pane fade">
-		{{>completed}}
-	</div>
-</div>
 </template>
 
 
 
-<template name="feed">
-	<table height="482px">
-		<tr>
-			<td>
-				<h1>FEED</h1>
-			</td>
-		</tr>
-	</table>
+<template name="posts">
+	
+	<div id="commentBox">
+		<form class="form-horizontal" role="form" id="postForm">
+		<div class="row">
+		<div class="form-group">
+			<div class="col-lg-12" id="well-post">
+				<textarea class="form-control required" rows="3" id="inputPost" placeholder="Insert Comments Here." maxlength="140"></textarea>
+				<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
+			</div>
+		</div>
+		</div>
+		<div clas="form-group">
+			<div class="col-sm-3">
+				<button type="submit" class="btn btn-primary">Post</button>
+			</div>
+		</div>
+		</form>
+	
+	</div>
+	
 </template>
 
 
@@ -123,11 +136,11 @@ players to get to the top of the leaderboard and win prizes along the way!.
 
 
 
-<template name="completed">
+<template name="feed">
 	<table height="482px">
 		<tr>
 			<td>
-				<h1>COMPLETED</h1>
+				<h1>Feed</h1>
 			</td>
 		</tr>
 	</table>
