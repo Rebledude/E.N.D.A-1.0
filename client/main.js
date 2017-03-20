@@ -9,7 +9,21 @@ Template.navigation.events({
 	}
 });
 
+Template.challenge.helpers({
+	puzzles: function(){
+	if(Meteor.user().profile.score == 0){
+		var img = 'imgTest.jpg';
+		return img;
+	}else if(Meteor.user().profile.score == 1){
+		var img = 'imgTest2.jpg';
+		return img;
 
+	}
+	else{
+		console.log("nope");
+	}
+	}
+})
 
 Template.dashboard.helpers({
   name: function() {
