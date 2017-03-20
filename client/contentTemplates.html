@@ -18,7 +18,7 @@
 					{{>feed}}
 				</div>
 				<div id="challange" class="tab-pane fade">
-					{{>challenge}}
+					{{>challange}}
 				</div>
 				<div id="completed" class="tab-pane fade">
 					{{>posts}}
@@ -38,6 +38,7 @@
 
 
 <template name="leaderboard">
+	{{first}}
 	{{#each players}}
 		<div id="leaderboard-player">
 		<span class="player">
@@ -53,7 +54,7 @@
 <template name="login">
 <table class="login-container" align=center><tr>
 <td width=360px height=540px valign="top" align=center>
-<img src="Logo.png" class="logo"> 
+
 
 <p class="about">
 <img src="info.png" class="img">
@@ -103,29 +104,46 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	
 	<div id="commentBox">
 		<form class="form-horizontal" role="form" id="postForm">
-		<div class="row">
-		<div class="form-group">
-			<div class="col-lg-12" id="well-post">
-				<textarea class="form-control required" rows="3" id="inputPost" placeholder="Insert Comments Here." maxlength="140"></textarea>
-				<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
-			</div>
-		</div>
-		</div>
-		<div clas="form-group">
-			<div class="col-sm-3">
-				<button type="submit" class="btn btn-primary">Post</button>
-			</div>
-		</div>
+			<textarea class="form-control required" rows="3" id="inputPost" placeholder="Insert Comments Here." maxlength="140"></textarea>
+			<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
+			<button type="submit" class="btn btn-primary" id="sub">Post</button>
 		</form>
-	
+	</div>
+	<div id="cDisplay">
+		{{#each posts}}
+			<div class="well">
+				<div class="row">
+				<div class="col-sm-2 pull-left">
+					{{> avatar userId=createdBy shape="rounded"}}
+				</div>
+				<div class="col-sm-3 pull-right">
+					{{timeDiff (date)}}
+				</div>
+				</div>
+				<div class="row spacer">
+				<div class="col-sm-12">
+					<input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
+						<div id="post{{_id}}">
+							{{post}}
+						</div>
+				</div>
+				</div>
+			</div>
+		{{/each}}
 	</div>
 	
 </template>
 
 
 
-<template name="challenge">
-	<img src={{puzzles}} id="cImage">
+<template name="challange">
+	<table height="482px">
+		<tr>
+			<td>
+				<img src="44.png">
+			</td>
+		</tr>
+	</table>
 </template>
 
 

@@ -9,21 +9,7 @@ Template.navigation.events({
 	}
 });
 
-Template.challenge.helpers({
-	puzzles: function(){
-	if(Meteor.user().profile.score == 0){
-		var img = 'imgTest.jpg';
-		return img;
-	}else if(Meteor.user().profile.score == 1){
-		var img = 'imgTest2.jpg';
-		return img;
 
-	}
-	else{
-		console.log("nope");
-	}
-	}
-})
 
 Template.dashboard.helpers({
   name: function() {
@@ -34,6 +20,7 @@ Template.dashboard.helpers({
 Template.dashboard.onCreated(function dashboardOnCreated() {
 	this.state = new ReactiveDict();
 	Meteor.subscribe('users');
+	Meteor.subscribe('userPosts');
 });
 
 
@@ -43,6 +30,7 @@ Template.leaderboard.helpers({
 	}
 });
 
+
 Avatar.setOptions({
   defaultImageUrl: "http://www.junaati.com/img/blog/avatar.png"
 });
@@ -50,6 +38,26 @@ Avatar.setOptions({
 Template.posts.helpers({
 	charsRemaining: function() {
 		return Session.get('CharactersRemaining');
+	},
+	posts:function(){
+		return Posts.find({}, {sort: {date:-1}});
+	},
+	timeDiff:function(postDate){
+		var timeDiff = new Date().getTime()-postDate.getTime();
+		var diffDays = Math.floor(timeDiff/(1000*3600*24));
+		var diffHours = Math.floor(timeDiff/(1000*3600));
+		var diffMins = Math.floor(timeDiff/(1000*60));
+		var diffSecs = Math.floor(timeDiff/(1000));
+
+		if(diffDays > 0)
+			return("about "+diffDays+"d ago");
+		else if(diffHours > 0)
+			return("about "+diffHours+"h ago");
+		else if(diffMins > 0)
+			return("about "+diffMins+"m ago");
+		else
+			return(diffSecs + "s ago");
+
 	}
 });
 
@@ -71,4 +79,3 @@ Template.posts.events({
 	}	
 });
 
-Meteor.subscribe('userPosts');
