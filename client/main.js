@@ -35,6 +35,22 @@ Avatar.setOptions({
   defaultImageUrl: "http://www.junaati.com/img/blog/avatar.png"
 });
 
+Template.challenge.helpers({
+	puzzles: function(){
+ 	if(Meteor.user().profile.score == 0){
+ 		var img = 'imgTest.jpg';
+ 		return img;
+ 	}else if(Meteor.user().profile.score == 1){
+ 		var img = 'imgTest2.jpg';
+ 		return img;
+  
+ 	}
+ 	else{
+ 		console.log("nope");
+ 	}
+ 	}
+});
+
 Template.posts.helpers({
 	charsRemaining: function() {
 		return Session.get('CharactersRemaining');

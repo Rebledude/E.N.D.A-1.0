@@ -17,8 +17,8 @@
 				<div id="feed" class="tab-pane fade in active">
 					{{>feed}}
 				</div>
-				<div id="challange" class="tab-pane fade">
-					{{>challange}}
+				<div id="challenge" class="tab-pane fade">
+					{{>challenge}}
 				</div>
 				<div id="completed" class="tab-pane fade">
 					{{>posts}}
@@ -136,14 +136,8 @@ players to get to the top of the leaderboard and win prizes along the way!.
 
 
 
-<template name="challange">
-	<table height="482px">
-		<tr>
-			<td>
-				<img src="44.png">
-			</td>
-		</tr>
-	</table>
+<template name="challenge">
+	<img src={{puzzles}} id="cImage">
 </template>
 
 

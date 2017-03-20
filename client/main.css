@@ -2,7 +2,13 @@ body, html {
   background: url(background.jpg) no-repeat center center fixed;
   background-size: cover;
 }
-
+#cImage{
+	margin-left: 15px;
+	margin-top: 15px;
+	margin-right: 15px;
+	margin-bottom:50px;
+  	width: 97%;
+}
 
 #inputPost {
 	width: 100%;
