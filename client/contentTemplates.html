@@ -1,7 +1,4 @@
 <template name="dashboard">
-  	 {{> navigation}}
-	<div class="container">
-		
 			<table id="dash-info"><tr>
 			<td>
 				<tr id="profile">
@@ -9,12 +6,24 @@
 						{{#with currentUser}}
 							{{> avatar user=this shape="rounded" size="large"}}
 						{{/with}}
-
-
 					</div>
 					<p id="name">{{name}} </p>				
 				</tr>
-				<tr>
+				<tr id="main">
+				<div class="portal">
+					{{>navigation}}
+				</div>
+				<div class="tab-content">
+				<div id="feed" class="tab-pane fade in active">
+					{{>feed}}
+				</div>
+				<div id="challenge" class="tab-pane fade">
+					{{>challenge}}
+				</div>
+				<div id="completed" class="tab-pane fade">
+					{{>posts}}
+				</div>
+				</div>
 				</tr>
 			</td>
 			<td id = "leaderboarddiv">
@@ -24,47 +33,72 @@
 				</div>
 			</td>
 			</tr></table>
-	</div>
 </template>
 
+
+
 <template name="leaderboard">
+	{{first}}
 	{{#each players}}
-		<div>
-		<div id="leaderboar-avatar">{{> avatar user=players shape ="rounded" size="small"}}</div>
-		<p id="leaderboard-player">{{profile.name}}: {{profile.score}}</p>
+	    {{#if isFirst}}
+		<div id="leaderboard-player">
+		<span class="player">
+		<i class="pull-right icon-chevron-left">{{> avatar user=this shape ="rounded" size="small"}}</i>
+		<span id="first-lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+		</span>
 		</div>
+	    {{else}}
+		{{#if isSecond}}
+			<div id="leaderboard-player">
+			<span class="player">
+			<i class="pull-right icon-chevron-left">{{> avatar user=this shape ="rounded" size="small"}}</i>
+			<span id="second-lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+			</span>
+			</div>
+		{{else}}
+			{{#if isThird}}
+				<div id="leaderboard-player">
+				<span class="player">
+				<i class="pull-right icon-chevron-left">{{> avatar user=this shape ="rounded" size="small"}}</i>
+				<span id="third-lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+				</span>
+				</div>
+			{{else}}
+				<div id="leaderboard-player">
+				<span class="player">
+				<i class="pull-right icon-chevron-left">{{> avatar user=this shape ="rounded" size="small"}}</i>
+				<span id="lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+				</span>
+				</div>
+			{{/if}}
+		{{/if}}
+	    {{/if}}
 	{{/each}}
 </template>
 
 
-<template name="contact">
-  	  {{> navigation}}
-	<div class="container">
-		<div class="row">
-		<div class="col-lg-1"></div>
-		<div class="col-lg-10">
-			<table id="dash-info"><tr>
-			<td>
-				E.T. Phone Home
-			</td>
-			</tr></table>
-		</div>
-		<div class="col-lg-1"></div>
-		</div>
-	</div>
-</template>
 
-
-
-<template name="login" id="tester">
+<template name="login">
 <table class="login-container" align=center><tr>
 <td width=360px height=540px valign="top" align=center>
-<img src="Logo.png" class="logo">
+
+
+<p class="about">
+<img src="info.png" class="img">
+<span class="info"><b>Project E.N.D.A</b> is a real world treasure hunt.
+Begin solving riddles and puzzles to find the location and go on an 
+adventre exploring all of <b>Galway City</b>.<br><br> Once you reach your
+location you will find a QR code that you must scan to complete your 
+challange and move onto your next adventure. <br><br>Compete with other 
+players to get to the top of the leaderboard and win prizes along the way!. 
+<br>So what are you waiting for? <br><br>Come along!</span>
+</p>
+
 <div class="project"> PROJECT</div><div class="enda"> E.N.D.A</div>
 <p class="subtext">Exciting New Data Adventure</p>
-<div id="login-screen">
-		{{>loginButtons}}
-</div>	
+<div class="login-screen">
+	{{>loginButtons}}
+</div>
 </td>
 </tr></table>
 </template>
@@ -72,23 +106,81 @@
 
 
 <template name="navigation">
-  <nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" >
-				
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="/"><span><img src="Logo.png" id="home-icon"></span>Project E.N.D.A</a>
-		</div>
-		
-		<ul class="nav navbar-nav navbar-right">
-        <li><button type="button" class="logout btn btn-default navbar-btn">Logout</button></li>
-		</ul>
+<ul class="nav nav-tabs">
+  <li class="active">
+	<a data-toggle="tab" href="#feed">Feed</a>
+  </li>
+  <li class="nav-item">
+	<a data-toggle="tab" href="#challenge">Challenge</a>
+  </li>
+  <li class="nav-item">
+	<a data-toggle="tab" href="#completed">Comment</a>
+  </li>
+</ul>
+<ul class="nav nav-tabs logout-align">
+  <li class="nav-item logout-align">
+	<a data-toggle="tab" href="#" class="logout">Logout</a>
+  </li>
+</ul>
+
+</template>
+
+
+
+<template name="posts">
+	
+	<div id="commentBox">
+		<form class="form-horizontal" role="form" id="postForm">
+			<textarea class="form-control required" rows="3" id="inputPost" placeholder="Have your say here..." maxlength="140"></textarea>
+			<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
+			<button type="submit" class="btn" id="sub">Post</button>
+		</form>
 	</div>
-</nav></template>
+	<div id="cDisplay">
+	<div id="div2">
+		{{#each posts}}
+			<div class="well">
+				<div class="row">
+				<div class="col-sm-2 pull-left">
+					{{> avatar userId=createdBy shape="rounded" size="small"}}
+				</div>
+				<div>
+					<h4>{{creator (createdBy)}}</h4>			</div>
+				<div class="col-sm-3 pull-right">
+					{{timeDiff (date)}}
+				</div>
+				</div>
+				<div class="row spacer">
+				
+					<div class="cText" id="post{{_id}}">
+							{{post}}
+						</div>
+				</div>
+				
+			</div>
+		{{/each}}
+	</div>
+	</div>
+	
+</template>
+
+
+
+<template name="challenge">
+	<img src={{puzzles}} id="cImage">
+</template>
+
+
+
+<template name="feed">
+	<table height="482px">
+		<tr>
+			<td>
+				<h1>Feed</h1>
+			</td>
+		</tr>
+	</table>
+</template>
 
 
 
