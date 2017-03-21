@@ -21,12 +21,16 @@ Template.dashboard.onCreated(function dashboardOnCreated() {
 	this.state = new ReactiveDict();
 	Meteor.subscribe('users');
 	Meteor.subscribe('userPosts');
+<<<<<<< HEAD
 	
+=======
+>>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 });
 
 
 Template.leaderboard.helpers({
 	players:function() {
+<<<<<<< HEAD
 		var Users = Meteor.users.find({}, {sort: {"profile.score":-1}});
 		return Users.map(function(player, index){
 		 	if(index===0)
@@ -38,6 +42,9 @@ Template.leaderboard.helpers({
 			return player;
 			
 		});
+=======
+		return Meteor.users.find();
+>>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 	}
 });
 
@@ -69,10 +76,13 @@ Template.posts.helpers({
 	posts:function(){
 		return Posts.find({}, {sort: {date:-1}});
 	},
+<<<<<<< HEAD
 	creator:function(user){
 		var userd = Meteor.users.findOne(user);
 		return userd.profile.name;
 	},
+=======
+>>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 	timeDiff:function(postDate){
 		var timeDiff = new Date().getTime()-postDate.getTime();
 		var diffDays = Math.floor(timeDiff/(1000*3600*24));
@@ -99,7 +109,11 @@ Template.posts.onRendered(function() {
 Template.posts.events({
 	'keyup #inputPost': function(event) {
 		var inputText = event.target.value;
+<<<<<<< HEAD
 		Session.set("CharactersRemaining", (140-inputText.length)+ " characters remaining...");
+=======
+		Session.set("CharactersRemaining", (140-inputText.length)+ "characters remaining");
+>>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 	},
 	'submit #postForm': function (event) {
 		event.preventDefault();

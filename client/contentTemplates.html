@@ -40,11 +40,17 @@
 <template name="leaderboard">
 	{{first}}
 	{{#each players}}
+<<<<<<< HEAD
 	    {{#if isFirst}}
 		<div id="leaderboard-player">
 		<span class="player">
 		<i class="pull-right icon-chevron-left">{{> avatar user=this shape ="rounded" size="small"}}</i>
 		<span id="first-lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+=======
+		<div id="leaderboard-player">
+		<span class="player">
+		<i class="pull-right icon-chevron-left">{{> avatar user=this shape ="rounded" size="small"}}</i>
+		<span >{{profile.name}}: {{profile.score}}</span>
 		</span>
 		</div>
 	    {{else}}
@@ -111,7 +117,11 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	<a data-toggle="tab" href="#feed">Feed</a>
   </li>
   <li class="nav-item">
+<<<<<<< HEAD
 	<a data-toggle="tab" href="#challenge">Challenge</a>
+=======
+	<a data-toggle="tab" href="#challange">Challange</a>
+>>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
   </li>
   <li class="nav-item">
 	<a data-toggle="tab" href="#completed">Comment</a>
@@ -131,6 +141,7 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	
 	<div id="commentBox">
 		<form class="form-horizontal" role="form" id="postForm">
+<<<<<<< HEAD
 			<textarea class="form-control required" rows="3" id="inputPost" placeholder="Have your say here..." maxlength="140"></textarea>
 			<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
 			<button type="submit" class="btn" id="sub">Post</button>
@@ -138,19 +149,33 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	</div>
 	<div id="cDisplay">
 	<div id="div2">
+=======
+			<textarea class="form-control required" rows="3" id="inputPost" placeholder="Insert Comments Here." maxlength="140"></textarea>
+			<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
+			<button type="submit" class="btn btn-primary" id="sub">Post</button>
+		</form>
+	</div>
+	<div id="cDisplay">
+>>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 		{{#each posts}}
 			<div class="well">
 				<div class="row">
 				<div class="col-sm-2 pull-left">
+<<<<<<< HEAD
 					{{> avatar userId=createdBy shape="rounded" size="small"}}
 				</div>
 				<div>
 					<h4>{{creator (createdBy)}}</h4>			</div>
+=======
+					{{> avatar userId=createdBy shape="rounded"}}
+				</div>
+>>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 				<div class="col-sm-3 pull-right">
 					{{timeDiff (date)}}
 				</div>
 				</div>
 				<div class="row spacer">
+<<<<<<< HEAD
 				
 					<div class="cText" id="post{{_id}}">
 							{{post}}
@@ -161,6 +186,18 @@ players to get to the top of the leaderboard and win prizes along the way!.
 		{{/each}}
 	</div>
 	</div>
+=======
+				<div class="col-sm-12">
+					<input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
+						<div id="post{{_id}}">
+							{{post}}
+						</div>
+				</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+>>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 	
 </template>
 
