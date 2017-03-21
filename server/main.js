@@ -7,13 +7,11 @@ import { Meteor } from 'meteor/meteor';
 	
 	Meteor.publish('users', function (){
 		return Meteor.users.find({}, {sort: {"profile.score":-1}});
-<<<<<<< HEAD
+
 	});
 	
 	Meteor.publish('userPosts', function() {
 		return Posts.find();
-=======
->>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 	});
 	
 	

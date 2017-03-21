@@ -10,7 +10,7 @@ body, html {
   	width: 97%;
 }
 
-<<<<<<< HEAD
+
 a {
 	color:#585d66 !important;
 }
@@ -65,8 +65,7 @@ a {
 	height: 482px;
 }	
 
-=======
->>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
+
 #inputPost {
 	width: 100%;
 	max-width: 100%;
@@ -77,7 +76,7 @@ a {
 }
 
 #sub {
-<<<<<<< HEAD
+
 	float:right;
 	margin-left:3px;
 	bordor: 1px sold #d5d5dd !important;
@@ -88,10 +87,6 @@ a {
 #sub:hover {
 	bordor: 1px sold #000000 !important;
 	background-color: #8e8ea4 !important;
-=======
-	align:right;
-	margin-left:3px;
->>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 }
 
 #home-icon {
@@ -107,11 +102,8 @@ a {
 }
 
 #commentBox{
-<<<<<<< HEAD
 	height: 150px;
-=======
-	height: 240px;
->>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
+
 	width: 100%;
 	
 }
@@ -195,7 +187,7 @@ a {
 
 .logout-align {
 	right: 0%;
-<<<<<<< HEAD
+
 }
 .logout {
 	background-color: #d5d5dd !important;
@@ -235,43 +227,7 @@ p.about:hover span{
 	opacity: 0.5;
 }
 
-=======
-}
 
-span.info{
-	background:#F5F5F7;
-	font-size: 16px;
-	height: 346px;
-	width:360px;
-	min-width:300px;
-	line-height: 20px;
-	position:absolute;
-	text-align: center;
-	top: 185px;
-	left: 0px;
-	display:none;
-	z-index: 4;
-	padding: 15px;
-	padding-top: 30px;
-}
-   
-p.about{
-	position:relative;
-}
-		
-p.about:hover span{
-	display:block;
-}
-
-.img{
-	width: 15px;
-	height: 15px;
-	margin: 5px;
-	float: left;
-	opacity: 0.5;
-}
-
->>>>>>> e9ebd143c9d80d7d0eae8804a725692d5a527755
 .img:hover{
 	opacity: 1;
 }
