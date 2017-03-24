@@ -12,3 +12,5 @@ accounts-google
 accounts-twitter
 service-configuration
 utillities:avatar
+session
+validate
