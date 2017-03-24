@@ -10,7 +10,6 @@ body, html {
   	width: 97%;
 }
 
-
 a {
 	color:#585d66 !important;
 }
@@ -47,7 +46,7 @@ a {
 	margin-left:5px;
 	width: 96%;
 	padding:0px;
-	min-height:32px;
+	min-height:50px;
 	
 }
 
@@ -65,7 +64,6 @@ a {
 	height: 482px;
 }	
 
-
 #inputPost {
 	width: 100%;
 	max-width: 100%;
@@ -76,7 +74,6 @@ a {
 }
 
 #sub {
-
 	float:right;
 	margin-left:3px;
 	bordor: 1px sold #d5d5dd !important;
@@ -103,7 +100,6 @@ a {
 
 #commentBox{
 	height: 150px;
-
 	width: 100%;
 	
 }
@@ -187,7 +183,6 @@ a {
 
 .logout-align {
 	right: 0%;
-
 }
 .logout {
 	background-color: #d5d5dd !important;
@@ -226,7 +221,6 @@ p.about:hover span{
 	float: left;
 	opacity: 0.5;
 }
-
 
 .img:hover{
 	opacity: 1;
@@ -280,6 +274,43 @@ div.enda {
 	border: 0px;
 	box-shadow: none;
 
+}
+
+#nameAsk {
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin: 10px;
+	margin-top: 70px;
+}
+
+#linkAsk {
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin: 10px;
+}
+
+#bioAsk {
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	min-width: 212px;
+	max-width: 212px;
+	max-height: 126px;
+	margin: 10px;
+}
+
+#continue {
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin: 10px;
+	width: 212px;
 }
 
 #login-dropdown-list input:first-of-type {

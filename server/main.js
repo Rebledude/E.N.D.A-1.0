@@ -7,7 +7,6 @@ import { Meteor } from 'meteor/meteor';
 	
 	Meteor.publish('users', function (){
 		return Meteor.users.find({}, {sort: {"profile.score":-1}});
-
 	});
 	
 	Meteor.publish('userPosts', function() {
@@ -19,9 +18,19 @@ import { Meteor } from 'meteor/meteor';
 Posts= new Mongo.Collection("posts");
 
 Meteor.methods({
+	'userInfo':function(name, bio, avatar){
+		Meteor.users.update(this.userId, {
+		  $set:{"profile.name":name,
+			"profile.bio":bio,
+			"profile.avatar":avatar
+			},
+		});
+	},
 	'insertPost':function(post){
-		Posts.insert(
+		 
+			Posts.insert(
 			{
+			 
 				post:post,
 				date: new Date(),
 				createdBy: this.userId,
@@ -39,34 +48,7 @@ Meteor.methods({
 				if(result) console.log (result);
 			}
 		);
+		
 	}
-});
-
-Meteor.methods({
-	'insertPost':function(post){
-		Posts.insert(
-			{
-				post:post,
-				date: new Date(),
-				createdBy: this.userId,
-				likes:{
-					totalLikes:0,
-					users:[]
-				},
-				retweets:{
-					totalRetweets:0,
-					users:[]
-				}
-			},
-			function(error, result){
-				if(error) console.log (error);
-				if(result) console.log (result);
-			}
-		);
-	}
-});
-
-Meteor.publish('userPosts', function() {
-	return Posts.find();
 });
 

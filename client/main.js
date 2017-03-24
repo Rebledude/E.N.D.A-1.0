@@ -21,12 +21,21 @@ Template.dashboard.onCreated(function dashboardOnCreated() {
 	this.state = new ReactiveDict();
 	Meteor.subscribe('users');
 	Meteor.subscribe('userPosts');
+	
 });
 
+Template.profile.events({
+	'submit #signUp': function(event){
+		var name=event.target.nameAsk.value;
+		var bio=event.target.bioAsk.value;
+		var avatar=event.target.linkAsk.value;
+		Meteor.call('userInfo', name, bio, avatar)
+		
+	}
+});
 
 Template.leaderboard.helpers({
 	players:function() {
-
 		var Users = Meteor.users.find({}, {sort: {"profile.score":-1}});
 		return Users.map(function(player, index){
 		 	if(index===0)
@@ -46,6 +55,16 @@ Avatar.setOptions({
   defaultImageUrl: "http://www.junaati.com/img/blog/avatar.png"
 });
 
+Template.home.helpers({
+	name:function(){
+		if(Meteor.user().profile.name == 'null'){
+			return false;
+		}else{
+			return true;
+		}
+	}
+});
+
 Template.challenge.helpers({
 	puzzles: function(){
  	if(Meteor.user().profile.score == 0){
@@ -57,7 +76,7 @@ Template.challenge.helpers({
   
  	}
  	else{
- 		console.log("nope");
+ 		console.log("error with puzzles");
  	}
  	}
 });
@@ -73,7 +92,6 @@ Template.posts.helpers({
 		var userd = Meteor.users.findOne(user);
 		return userd.profile.name;
 	},
-
 	timeDiff:function(postDate){
 		var timeDiff = new Date().getTime()-postDate.getTime();
 		var diffDays = Math.floor(timeDiff/(1000*3600*24));
@@ -100,16 +118,18 @@ Template.posts.onRendered(function() {
 Template.posts.events({
 	'keyup #inputPost': function(event) {
 		var inputText = event.target.value;
-
 		Session.set("CharactersRemaining", (140-inputText.length)+ " characters remaining...");
-
 	},
 	'submit #postForm': function (event) {
 		event.preventDefault();
 		var post = event.target.inputPost.value;
 		event.target.reset();
 		Session.set("CharactersRemaining", 140 + "characters remaining");
-		Meteor.call('insertPost',post);
+		if(post == ''){
+			console.log("error")
+		}else{
+			Meteor.call('insertPost',post);
+		}
 	}	
 });
 

@@ -38,11 +38,13 @@
 
 
 <template name="leaderboard">
+	{{first}}
 	{{#each players}}
+	    {{#if isFirst}}
 		<div id="leaderboard-player">
 		<span class="player">
 		<i class="pull-right icon-chevron-left">{{> avatar user=this shape ="rounded" size="small"}}</i>
-		<span >{{profile.name}}: {{profile.score}}</span>
+		<span id="first-lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
 		</span>
 		</div>
 	    {{else}}
@@ -110,7 +112,6 @@ players to get to the top of the leaderboard and win prizes along the way!.
   </li>
   <li class="nav-item">
 	<a data-toggle="tab" href="#challenge">Challenge</a>
-
   </li>
   <li class="nav-item">
 	<a data-toggle="tab" href="#completed">Comment</a>
@@ -130,7 +131,6 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	
 	<div id="commentBox">
 		<form class="form-horizontal" role="form" id="postForm">
-
 			<textarea class="form-control required" rows="3" id="inputPost" placeholder="Have your say here..." maxlength="140"></textarea>
 			<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
 			<button type="submit" class="btn" id="sub">Post</button>
@@ -138,17 +138,14 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	</div>
 	<div id="cDisplay">
 	<div id="div2">
-
 		{{#each posts}}
 			<div class="well">
 				<div class="row">
 				<div class="col-sm-2 pull-left">
-
 					{{> avatar userId=createdBy shape="rounded" size="small"}}
 				</div>
 				<div>
 					<h4>{{creator (createdBy)}}</h4>			</div>
-
 				<div class="col-sm-3 pull-right">
 					{{timeDiff (date)}}
 				</div>
@@ -185,11 +182,26 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	</table>
 </template>
 
-
+<template name="profile">
+	<table class="login-container" align=center><tr>
+	<td width=360px height=540px valign="top" align=center>
+		<form id="signUp">
+			<input type="text" placeholder="Name" id="nameAsk">
+			<textarea placeholder="Bio" rows="5" columns="5" id="bioAsk"></textarea>
+			<input type="text" placeholder="Link to avatar" id="linkAsk">
+			<button type="submit" class="btn" id="continue">Continue</button>
+		</form>
+	</td>
+	</tr></table>
+</template>
 
 <template name="home">
 	{{#if currentUser}}
-		{{> dashboard}}
+		{{#if name}}
+			{{> dashboard}}
+		{{else}}
+			{{> profile}}
+		{{/if}}
 	{{else}}
 		{{> login}}
 	{{/if}}
