@@ -4,7 +4,13 @@ html, body {
 	background: url(background.jpg) no-repeat center center fixed;
 	background-size: cover;
 }
-
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
+}
 #cImage{
 	margin-left: 15px;
 	margin-top: 15px;
@@ -132,8 +138,8 @@ a {
 #leaderboard {
 	position: absolute;
 	border-left: 2px solid #585d66;
-	top:10px;
-	bottom:10px;
+	top: 1.5%;
+	bottom: 1.5%;
 	width:100%;
 }
 
@@ -211,61 +217,23 @@ input[type=email], input[type=password] {
 	border-radius: 0px;
 }
 
-#nameAsk {
-	padding: 12px 20px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-	margin: 10px;
-	margin-top: 70px;
-}
-
-#linkAsk {
-	padding: 12px 20px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-	margin: 10px;
-}
-
-#bioAsk {
-	padding: 12px 20px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-	min-width: 212px;
-	max-width: 212px;
-	max-height: 126px;
-	margin: 10px;
-}
-
-#continue {
-	padding: 12px 20px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-	margin: 10px;
-	width: 212px;
-}
-
+@media (max-width: 992px){
 .logo {
   	left: 50%;
 	position: absolute;
 	top: 50%;
-	margin-top: -270px;
+	margin-top: -75%;
 	transform: translate(-50%, -50%);
-	width: 100px;
-	height: 100px;
+	width: 250px;
+	height: 250px;
 }
-
-@media (max-width: 992px){
 .info{
 	font-size: 45px;
 	font-family: "Georgia";
 	height: inherit;
 	width: inherit;
 	min-width:845px;
-	line-height: 120%;
+	line-height: 100%;
 	position:absolute;
 	text-align: center;
 	top: 410px;
@@ -295,8 +263,9 @@ input[type=email], input[type=password] {
 	display: none;
 }
 .login-container{
-	margin: 5%;
-	height: 93%;
+	margin-top: 15%;
+	margin-left: 5%;
+	height: 86%;
 	width: 90%;
 	min-width:845px;
 	position: absolute;
@@ -304,11 +273,8 @@ input[type=email], input[type=password] {
 	box-shadow: 0px 0px 50px #646568;
 	border-radius: 0px;
 }
-.title{
-	margin-top: 64px;
-}
 .project{
-	margin-top: 104px;	
+	margin-top: 134px;	
 	font-family: "Georgia";
 	font-size: 55px;
 }
@@ -411,9 +377,52 @@ input[type=email], input[type=password] {
 	background-image: none;
 	border-color: green;
 }
+.mainProfileText {
+	margin-top: 10px;
+	font-family: "Georgia";
+	font-size: 55px;
+}
+.subProfileText {
+	font-family: "Georgia";
+	font-size: 55px;
+	font-style: italic;
+}
+#nameAsk {
+	margin-top: 10%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	width: 95%;
+}
+#bioAsk {
+	resize: none;
+	margin: 2.5%;
+	width: 95%;
+	height: 400px;
+}
+#linkAsk {
+	margin: 2.5%;
+	width: 95%;
+}
+#continue {
+	margin: 2.5%;
+	width: 95%;
+}
+.boardOfPlayers {
+	height: 95%;
+	overflow-y: auto;
+}
 }
 
 @media (min-width: 993px) {
+.logo {
+  	left: 50%;
+	position: absolute;
+	top: 50%;
+	margin-top: -270px;
+	transform: translate(-50%, -50%);
+	width: 100px;
+	height: 100px;
+}
 .info{
 	background:#F5F5F7;
 	font-size: 16px;
@@ -489,7 +498,6 @@ input[type=email], input[type=password] {
 	border: 0px;
 	box-shadow: none;
 }
-<<<<<<< HEAD
 .btn {
 	border-radius: 0px;
 	font-family: "Georgia";
@@ -558,5 +566,39 @@ input[type=email], input[type=password] {
 	background-color: green;
 	background-image: none;
 	border-color: green;
+}
+.mainProfileText {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	font-family: "Georgia";
+	font-size: 24px;
+}
+.subProfileText {
+	margin-bottom: 5%;
+	font-family: "Georgia";
+	font-size: 24px;
+	font-style: italic;
+}
+#nameAsk {
+	width: 95%;
+	margin: 2.5%;
+}
+#bioAsk {
+	resize: none;
+	width: 95%;
+	height: 126px;
+	margin: 2.5%;
+}
+#linkAsk {
+	width: 95%;
+	margin: 2.5%;
+}
+#continue {
+	margin: 2.5%;
+	width: 95%;
+}
+.boardOfPlayers {
+	height: 95%;
+	overflow-y: auto;
 }
 }
