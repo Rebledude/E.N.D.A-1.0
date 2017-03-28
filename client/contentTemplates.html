@@ -76,14 +76,11 @@
 	{{/each}}
 </template>
 
-
-
 <template name="login">
 <table class="login-container" align=center><tr>
-<td width=360px height=540px valign="top" align=center>
-
-
-<p class="about">
+<td valign="top" align=center>
+<img src="Logo.png" class="logo">
+<p id="about">
 <img src="info.png" class="img">
 <span class="info"><b>Project E.N.D.A</b> is a real world treasure hunt.
 Begin solving riddles and puzzles to find the location and go on an 
@@ -93,10 +90,9 @@ challange and move onto your next adventure. <br><br>Compete with other
 players to get to the top of the leaderboard and win prizes along the way!. 
 <br>So what are you waiting for? <br><br>Come along!</span>
 </p>
-
 <div class="project"> PROJECT</div><div class="enda"> E.N.D.A</div>
 <p class="subtext">Exciting New Data Adventure</p>
-<div class="login-screen">
+<div id="login-screen">
 	{{>loginButtons}}
 </div>
 </td>
@@ -107,7 +103,7 @@ players to get to the top of the leaderboard and win prizes along the way!.
 
 <template name="navigation">
 <ul class="nav nav-tabs">
-  <li class="active">
+  <li class="active nav-item">
 	<a data-toggle="tab" href="#feed">Feed</a>
   </li>
   <li class="nav-item">

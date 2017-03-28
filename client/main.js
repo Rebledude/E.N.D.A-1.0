@@ -132,4 +132,3 @@ Template.posts.events({
 		}
 	}	
 });
-
