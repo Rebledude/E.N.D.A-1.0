@@ -1,4 +1,15 @@
 <template name="dashboard">
+<div class="container">
+    <div id="sidebar">
+	<div class="lboardTitle">
+		<p id="head">Leaderboard </p>
+	</div>
+		{{>leaderboard}}
+    </div>
+	<div class="main-content">
+		<img src="tab.png" data-toggle=".container" id="sidebar-toggle">
+    </div>
+</div>
 			<table id="dash-info"><tr>
 			<td>
 				<tr id="profile">
@@ -20,7 +31,7 @@
 				<div id="challenge" class="tab-pane fade">
 					{{>challenge}}
 				</div>
-				<div id="completed" class="tab-pane fade">
+				<div id="comments" class="tab-pane fade">
 					{{>posts}}
 				</div>
 				</div>
@@ -106,18 +117,18 @@ players to get to the top of the leaderboard and win prizes along the way!.
 <template name="navigation">
 <ul class="nav nav-tabs">
   <li class="active nav-item">
-	<a data-toggle="tab" href="#feed">Feed</a>
+	<a data-toggle="tab" href="#feed" class="navchange">News Feed</a>
   </li>
   <li class="nav-item">
-	<a data-toggle="tab" href="#challenge">Challenge</a>
+	<a data-toggle="tab" href="#challenge" class="navchange">Challenge</a>
   </li>
   <li class="nav-item">
-	<a data-toggle="tab" href="#completed">Comment</a>
+	<a data-toggle="tab" href="#comments" class="navchange">Comments</a>
   </li>
 </ul>
 <ul class="nav nav-tabs logout-align">
   <li class="nav-item logout-align">
-	<a data-toggle="tab" href="#" class="logout">Logout</a>
+	<a data-toggle="tab" href="#" class="logout navchange">Logout</a>
   </li>
 </ul>
 
@@ -166,6 +177,13 @@ players to get to the top of the leaderboard and win prizes along the way!.
 
 <template name="challenge">
 	<img src={{puzzles}} id="cImage">
+	<div class="challSubmit">
+	<p class="challText">Enter code here:</p>
+		<form id="challAnswer">
+			<input type="text" placeholder="Answer" id="answer" class="form-control challAnswer">
+			<button type="submit" class="btn submitAns" id="submitAnswer"><i class="glyphicon glyphicon-arrow-right"></i></button>
+		</form>
+	</div>
 </template>
 
 

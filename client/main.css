@@ -3,6 +3,7 @@ html, body {
 	width: 100%;
 	background: url(background.jpg) no-repeat center center fixed;
 	background-size: cover;
+	overflow:hidden;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -11,13 +12,7 @@ html, body {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
 }
-#cImage{
-	margin-left: 15px;
-	margin-top: 15px;
-	margin-right: 15px;
-	margin-bottom:50px;
-  	width: 97%;
-}
+
 
 a {
 	color:#585d66 !important;
@@ -28,70 +23,12 @@ a {
 	color: #c98600;
 }
 
-#lBoardDisplay{
-	color:#585d66;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-#first-lBoardDisplay{
-	font-size: 17px;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #C39953;
-}
-
-#second-lBoardDisplay{
-	font-size:16px
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #C0C0C0;
-}
-
-#third-lBoardDisplay{
-	font-size:15px;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #6C541E;
-}
-
 .well {
 	margin-left:5px;
 	width: 96%;
 	padding:0px;
 	min-height:50px;
 	
-}
-
-#cDisplay{
-	height: 300px;
-	position:relative;
-}
-#div2 {
-	max-height:100%;
-	overflow: auto;
-}
-
-#completed{
-	height: 482px;
-}	
-
-#inputPost {
-	width: 100%;
-	max-width: 100%;
-	max-height: 74px;
-	margin: 5px;
-	display: inline-block;
-	
-}
-
-#sub {
-	float:right;
-	margin-left:3px;
-	bordor: 1px sold #d5d5dd !important;
-	background-color: #d5d5dd !important;
-	color: #000000 !important;
-}
-
-#sub:hover {
-	bordor: 1px sold #000000 !important;
-	background-color: #8e8ea4 !important;
 }
 
 #home-icon {
@@ -103,97 +40,12 @@ a {
 }
 
 .player{
-	display:block;
-}
-
-#commentBox{
-	height: 150px;
-	width: 100%;
-}
-
-#leaderboard-player{
-	height: 30px;
-	margin:10px;
-}
-
-#leaderboarddiv {
-	position:relative;
-	width: 30%;
-}
-
-#dash-info {
-	height: 650px;
-	width: 59%;
-	min-width: 500px;
-	background-color: #F5F5F7;
-	box-shadow: 0px 0px 50px #646568;
-	padding: 10px;
-	position: fixed;
-  	top: 50%;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
-	border-radius: 0px;
-}
-
-#leaderboard {
-	position: absolute;
-	border-left: 2px solid #585d66;
-	top: 1.5%;
-	bottom: 1.5%;
-	width:100%;
 }
 
 #head {
 	text-align:center;
 	color: #585d66;
 	font-size: 20px;
-}
-
-#main {
-	width: 69%;
-	height: 482px;
-	position: absolute;
-	left:0;
-	top: 163px;
-}
-
-#profile {
-	height: 163px;
-	margin: 5px;
-	position: absolute;
-	left:0;
-	top:0;
-	width: 69%;
-	border-bottom: 2px solid #585d66;
-}
-
-#name {
-	margin-left: 5px;
-	color: #585d66;
-	font-size: 20px;
-}
-
-.nav-tabs{
-	position: absolute;
-	margin-top: -44px;
-}
-
-.portal {
-	margin-top: 5px;
-	width: 100%;
-}
-
-.profiler{
-	position: relative;
-	margin: 5px;
-}
-
-.logout-align {
-	right: 0%;
-}
-.logout {
-	background-color: #d5d5dd !important;
-	color: #000000 !important;
 }
 
 #login-dropdown-list input:first-of-type {
@@ -217,7 +69,21 @@ input[type=email], input[type=password] {
 	border-radius: 0px;
 }
 
+
+
+
+
+
+
+
+/* Small Screens */
+
+
+
+
+
 @media (max-width: 992px){
+/*login*/
 .logo {
   	left: 50%;
 	position: absolute;
@@ -377,6 +243,8 @@ input[type=email], input[type=password] {
 	background-image: none;
 	border-color: green;
 }
+
+/*details*/
 .mainProfileText {
 	margin-top: 10px;
 	font-family: "Georgia";
@@ -407,13 +275,262 @@ input[type=email], input[type=password] {
 	margin: 2.5%;
 	width: 95%;
 }
+
+/*dashboard*/
+#dash-info {
+	height: 93%;
+	width: 90%;
+	min-width: 800px;
+	background-color: rgba(245,245,247, 0.8);
+	box-shadow: 0px 0px 50px #646568;
+	padding: 10px;
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	border-radius: 0px;
+}
+
+/*profile*/
+#profile {
+	height: 25%;
+	width: 99%;
+	margin: 5px;
+	position: absolute;
+	left:0;
+	top:0;
+	border-bottom: 2px solid #585d66;
+}
+.avatar .avatar-image, .avatar .avatar-initials{
+	height: 220%;
+	width: 220%;
+}
+.profiler{
+	position: relative;
+	margin: 5px;
+}
+#name {
+	top: 90px;
+	position: relative;
+	margin-left: 5px;
+	color: #585d66;
+	font-size: 50px;
+}
+
+/*content*/
+#main {
+	width: 100%;
+	min-width: 675px;
+	height: 100%;
+	position: absolute;
+	top: 25%;
+	margin-top: -73px;
+}
+.portal {
+	width: 100%;
+}
+.nav-tabs{
+	position: absolute;
+}
+.navchange {
+	width: auto;
+	height: auto;
+	font-size: 38px;
+}
+.logout-align {
+	right: 0%;
+}
+.logout {
+	background-color: #d5d5dd !important;
+	color: #000000 !important;
+}
+.tab-content {
+	margin-top: 80px;
+	height: 100%;
+}
+#challenge { 
+	height: 100%;
+}
+#cImage{
+	display: block;
+	margin: auto;
+	padding: 20px;
+  	max-width: 95%;
+	max-height: 75%;
+}
+.challText {
+	margin-top: 30px;
+	font-size: 40px;
+}
+.challSubmit {
+	height: 25%;
+	text-align: center;
+}
+.challAnswer {
+	margin-top: 10px;
+	display: inline-block;
+	width: 50%;
+}
+.submitAns {
+	margin-top: -30px;
+	display: inline-block;
+	margin-left: 5px;
+	background-color: #00a300;
+	font-size: 70px;
+	border-radius: 3px;
+}
+#comments{
+	height: 482px;
+}
+#commentBox{
+	height: auto;
+	width: 99%;
+	margin-top: 75px;
+}	
+#inputPost {
+	width: 100%;
+	max-width: 100%;
+	margin: 5px;
+	display: inline-block;
+	resize: none;
+}
+#sub {
+	width: 20%;
+	height: 75%;
+	float:right;
+	margin-left:3px;
+	border: 1px sold #d5d5dd !important;
+	background-color: #d5d5dd !important;
+	color: #000000 !important;
+}
+#sub:hover {
+	bordor: 1px sold #000000 !important;
+	background-color: #8e8ea4 !important;
+}
+#cDisplay{
+	height: 300px;
+	position:relative;
+}
+#div2 {
+	max-height:100%;
+	overflow: auto;
+}
+
+/*leaderboard*/
 .boardOfPlayers {
 	height: 95%;
 	overflow-y: auto;
 }
+#head {
+	font-size: 50px;
+}
+#leaderboard {
+	display: none;
+	position: absolute;
+	border-left: 2px solid #585d66;
+	top: 1.5%;
+	bottom: 1.5%;
+	width:100%;
+}
+#leaderboarddiv {
+	display:none;
+}
+.lboardTitle {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	padding: 10px;
+}
+#leaderboard-player{
+	height: auto;
+	padding: 20px;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+#leaderboard-player:last-child{
+	height: auto;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+#lBoardDisplay{
+	color:#585d66;
+	font-size: 36px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#first-lBoardDisplay{
+	font-size: 42px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #C39953;
+}
+#second-lBoardDisplay{
+	font-size:40px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #C0C0C0;
+}
+#third-lBoardDisplay{
+	font-size:38px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #6C541E;
+}
+.pull-right {
+	margin-right: 20px !important;
+}
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    right: 0;
+	padding-right: 0px;
+    -webkit-transition:  right 0.4s ease-in-out;
+    -moz-transition:  right 0.4s ease-in-out;
+    -ms-transition:  right 0.4s ease-in-out;
+    -o-transition:  right 0.4s ease-in-out;
+    transition:  right 0.4s ease-in-out;
+}
+.container.open-sidebar {
+    right: 66%;
+}
+#sidebar {
+    position: absolute;
+    right: -66%;
+    background: #F5F5F7;
+    width: 66%;
+    height: 100%;
+    box-sizing: border-box;
+	z-index: 10000;
+}
+.main-content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+}
+.main-content #sidebar-toggle {
+	top: 2%;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    float: right;
+	z-index: 10002;
+}
 }
 
+
+
+
+
+
+
+
+
+
+
+/* Large Screens */
+
+
+
+
+
 @media (min-width: 993px) {
+/* login*/
 .logo {
   	left: 50%;
 	position: absolute;
@@ -536,6 +653,7 @@ input[type=email], input[type=password] {
 	font-family: "Georgia";
 }
 .form-control {
+	resize: none;
 	font-family: "Georgia";
 }
 .contact{
@@ -567,6 +685,8 @@ input[type=email], input[type=password] {
 	background-image: none;
 	border-color: green;
 }
+
+/*details*/
 .mainProfileText {
 	margin-top: 5%;
 	margin-bottom: 5%;
@@ -597,8 +717,174 @@ input[type=email], input[type=password] {
 	margin: 2.5%;
 	width: 95%;
 }
+
+/*dashboard*/
+#dash-info {
+	height: 650px;
+	width: 59%;
+	min-width: 500px;
+	background-color: #F5F5F7;
+	box-shadow: 0px 0px 50px #646568;
+	padding: 10px;
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	border-radius: 0px;
+}
+/*profile*/
+#profile {
+	height: 163px;
+	margin: 5px;
+	position: absolute;
+	left:0;
+	top:0;
+	width: 69%;
+	border-bottom: 2px solid #585d66;
+}
+.profiler{
+	position: relative;
+	margin: 5px;
+}
+/*content*/
+#main {
+	width: 70%;
+	height: 482px;
+	position: absolute;
+	left:0;
+	top: 163px;
+}
+.portal {
+	margin-top: 5px;
+	width: 100%;
+}
+.nav-tabs{
+	position: absolute;
+	margin-top: -44px;
+}
+.logout-align {
+	right: 0%;
+}
+.logout {
+	background-color: #d5d5dd !important;
+	color: #000000 !important;
+}
+.tab-content {
+	height: 100%;
+}
+/*challenge*/
+#challenge { 
+	height: 100%;
+}
+#cImage{
+	display: block;
+	margin: auto;
+	padding: 20px;
+  	max-width: 95%;
+	max-height: 75%;
+}
+.challSubmit {
+	height: 25%;
+	text-align: center;
+}
+.challAnswer {
+	margin-top: 10px;
+	display: inline-block;
+	width: 25%;
+}
+.submitAns {
+	display: inline-block;
+	margin-left: 5px;
+	background-color: #00a300;
+	font-size: 14px;
+	border-radius: 3px;
+}
+/*comments*/
+#comments{
+	height: 482px;
+}
+#commentBox{
+	height: 150px;
+	width: 100%;
+}	
+#inputPost {
+	width: 100%;
+	max-width: 100%;
+	max-height: 74px;
+	margin: 5px;
+	display: inline-block;
+}
+#sub {
+	float:right;
+	margin-left:3px;
+	border: 1px sold #d5d5dd !important;
+	background-color: #d5d5dd !important;
+	color: #000000 !important;
+}
+#sub:hover {
+	border: 1px sold #000000 !important;
+	background-color: #8e8ea4 !important;
+}
+#cDisplay{
+	left: 4px;
+	height: 330px;
+	position:relative;
+}
+#div2 {
+	max-height:100%;
+	overflow: auto;
+}
+#name {
+	margin-left: 5px;
+	color: #585d66;
+	font-size: 20px;
+}
+/*leaderboard*/
 .boardOfPlayers {
 	height: 95%;
 	overflow-y: auto;
+}
+.leaderboard-tab {
+	display: none;
+}
+#leaderboard {
+	position: absolute;
+	border-left: 2px solid #585d66;
+	top: 1.5%;
+	bottom: 1.5%;
+	width:100%;
+}
+#leaderboarddiv {
+	position:relative;
+	width: 30%;
+}
+#lBoardDisplay{
+	color:#585d66;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#first-lBoardDisplay{
+	font-size: 17px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #C39953;
+}
+#second-lBoardDisplay{
+	font-size:16px
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #C0C0C0;
+}
+#third-lBoardDisplay{
+	font-size:15px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #6C541E;
+}
+#leaderboard-player{
+	height: 30px;
+	margin:10px;
+}
+#sidebar {
+	display:none;
+}
+.main-content #sidebar-toggle {
+	display: none;
 }
 }

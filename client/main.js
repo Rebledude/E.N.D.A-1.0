@@ -9,8 +9,6 @@ Template.navigation.events({
 	}
 });
 
-
-
 Template.dashboard.helpers({
   name: function() {
     return Meteor.user().profile.name;
@@ -24,13 +22,19 @@ Template.dashboard.onCreated(function dashboardOnCreated() {
 	
 });
 
+Template.posts.onRendered(function() {
+  $("[data-toggle]").click(function() {
+    var toggle_el = $(this).data("toggle");
+    $(toggle_el).toggleClass("open-sidebar");
+  });
+});
+
 Template.profile.events({
 	'submit #signUp': function(event){
 		var name=event.target.nameAsk.value;
 		var bio=event.target.bioAsk.value;
 		var avatar=event.target.linkAsk.value;
 		Meteor.call('userInfo', name, bio, avatar)
-		
 	}
 });
 
@@ -68,7 +72,7 @@ Template.home.helpers({
 Template.challenge.helpers({
 	puzzles: function(){
  	if(Meteor.user().profile.score == 0){
- 		var img = 'imgTest.jpg';
+ 		var img = '44.png';
  		return img;
  	}else if(Meteor.user().profile.score == 1){
  		var img = 'imgTest2.jpg';
