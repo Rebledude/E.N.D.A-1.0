@@ -98,18 +98,26 @@ Template.home.helpers({
 
 Template.challenge.helpers({
 	puzzles: function(){
- 	if(Meteor.user().profile.score == 0){
- 		var img = '44.png';
- 		return img;
- 	}else if(Meteor.user().profile.score == 1){
- 		var img = 'imgTest2.jpg';
- 		return img;
-  
+ 	switch(Meteor.user().profile.score){
+		case 0:
+ 			var img = 'g.png';
+ 			return img;
+ 		case 1:
+ 			var img = '44.png';
+ 			return img;
+		case 2:
+ 			var img = 'la.jpg';
+ 			return img;
+		case 3:
+ 			var img = 'smacs.jpg';
+ 			return img;
+		case 4:
+ 			var img = 'spch.png';
+ 			return img;
+ 		default:
+ 			console.log("error with puzzles");
  	}
- 	else{
- 		console.log("error with puzzles");
- 	}
- 	}
+	}
 });
 
 Template.posts.helpers({
