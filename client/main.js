@@ -12,7 +12,16 @@ Template.navigation.events({
 Template.dashboard.helpers({
   name: function() {
     return Meteor.user().profile.name;
+  },
+  bio: function() {
+	return Meteor.user().profile.bio;
   }
+});
+
+Template.dashboard.events({
+	'click #settings': function(){
+		Meteor.call('settings')
+	}
 });
 
 Template.dashboard.onCreated(function dashboardOnCreated() {
@@ -29,12 +38,30 @@ Template.posts.onRendered(function() {
   });
 });
 
+Template.profile.helpers({
+	charsRemaining: function() {
+		return Session.get('CharactersRemaining');
+	}
+});
 Template.profile.events({
 	'submit #signUp': function(event){
+		event.preventDefault();
 		var name=event.target.nameAsk.value;
 		var bio=event.target.bioAsk.value;
 		var avatar=event.target.linkAsk.value;
-		Meteor.call('userInfo', name, bio, avatar)
+		event.target.reset();
+		Session.set("CharactersRemaining", 200 + "characters remaining");
+		if(name!=""){
+			Meteor.call('userInfo', name, bio, avatar)
+		}
+		else{
+			var c = document.getElementById('nameAsk');
+			c.className += ' warning';
+		}
+	},
+	'keyup #bioAsk': function(event) {
+		var inputText = event.target.value;
+		Session.set("CharactersRemaining", (200-inputText.length)+ " characters remaining...");
 	}
 });
 

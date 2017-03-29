@@ -18,7 +18,12 @@
 							{{> avatar user=this shape="rounded" size="large"}}
 						{{/with}}
 					</div>
-					<p id="name">{{name}} </p>				
+					<span id="name">{{name}} </span>
+					<button id="settings"> <span class="glyphicon glyphicon-cog"></span>
+       					 </button>
+					<br><br><div class ="bioDisplay">
+						{{bio}}
+					</div>				
 				</tr>
 				<tr id="main">
 				<div class="portal">
@@ -204,8 +209,9 @@ players to get to the top of the leaderboard and win prizes along the way!.
 	<div class="mainProfileText">Welcome to <br><b>Project E.N.D.A.</b><br></div>
 	<div class="subProfileText">We just need a few more details.</div>
 		<form id="signUp">
-			<input type="text" placeholder="Name" id="nameAsk" class="form-control">
-			<textarea placeholder="Bio" id="bioAsk" class="form-control"></textarea>
+			<input type="text" placeholder="Name" id="nameAsk" class="form-control" maxlength="20">
+			<textarea placeholder="Bio" id="bioAsk" class="form-control" maxlength="200"></textarea>
+			<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
 			<input type="text" placeholder="Link to avatar" id="linkAsk" class="form-control">
 			<button type="submit" class="btn btn-primary" id="continue">Continue</button>
 		</form>

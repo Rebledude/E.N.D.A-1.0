@@ -1,19 +1,19 @@
 import { Meteor } from 'meteor/meteor';
 
   // code to run on server at startup
-	Meteor.startup(function () {
-		Meteor.absoluteUrl.defaultOptions.rootUrl = 'http://danu7.it.nuigalway.ie:8652/';
-	});
-	
-	Meteor.publish('users', function (){
-		return Meteor.users.find({}, {sort: {"profile.score":-1}});
-	});
-	
-	Meteor.publish('userPosts', function() {
-		return Posts.find();
-	});
-	
-	
+		Meteor.startup(function () {
+ 		Meteor.absoluteUrl.defaultOptions.rootUrl = 'http://danu7.it.nuigalway.ie:8629/';
+ 	});
+  	
+  	Meteor.publish('users', function (){
+  		return Meteor.users.find({}, {sort: {"profile.score":-1}});
+  	});
+  	
+  	Meteor.publish('userPosts', function() {
+ 		return Posts.find();
+ 	});
+ 	
+ 	
 
 Posts= new Mongo.Collection("posts");
 
@@ -23,6 +23,12 @@ Meteor.methods({
 		  $set:{"profile.name":name,
 			"profile.bio":bio,
 			"profile.avatar":avatar
+			},
+		});
+	},
+	'settings':function(){
+		Meteor.users.update(this.userId,{
+			$set:{"profile.name": "null"
 			},
 		});
 	},

@@ -12,7 +12,30 @@ html, body {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
 }
-
+div.profiler{
+	width: 80px;
+	float: left;
+}
+.warning{
+	border-color: #ff0000;
+}
+#settings{
+	float:right;
+	border: none;
+	background-color: rgba(245,245,247, 0.75);
+}
+#settings clicked {
+	border: none;
+	background-color: rgba(245,245,247, 0.75);
+}
+.bioDisplay{
+	float:left;
+	height: 70px;
+	padding: 2px;
+	margin-top:-10px;
+	width: 80%;
+	overflow:hidden;
+}
 
 a {
 	color:#585d66 !important;
@@ -838,6 +861,7 @@ input[type=email], input[type=password] {
 	margin-left: 5px;
 	color: #585d66;
 	font-size: 20px;
+	float:left;
 }
 /*leaderboard*/
 .boardOfPlayers {
@@ -878,7 +902,9 @@ input[type=email], input[type=password] {
 	color: #6C541E;
 }
 #leaderboard-player{
-	height: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto;
 	margin:10px;
 }
 #sidebar {
