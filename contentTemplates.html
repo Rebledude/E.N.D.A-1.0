@@ -1,0 +1,232 @@
+<template name="dashboard">
+<div class="container">
+    <div id="sidebar">
+	<div class="lboardTitle">
+		<p id="head">Leaderboard </p>
+	</div>
+		{{>leaderboard}}
+    </div>
+	<div class="main-content">
+		<img src="tab-open.png" data-toggle=".container" id="sidebar-toggle">
+    </div>
+</div>
+			<table id="dash-info"><tr>
+			<td>
+				<tr id="profile">
+					<div class= "profiler">
+						{{#with currentUser}}
+							{{> avatar user=this shape="rounded" size="large"}}
+						{{/with}}
+					</div>
+					<span id="name">{{name}} </span>
+					<button id="settings"> <span class="glyphicon glyphicon-cog"></span></button>
+					<br><br><div class ="bioDisplay">
+						{{bio}}
+					</div>				
+				</tr>
+				<tr id="main">
+				<div class="portal">
+					{{>navigation}}
+				</div>
+				<div class="tab-content">
+				<div id="challenge" class="tab-pane fade in active">
+					{{>challenge}}
+				</div>
+				<div id="comments" class="tab-pane fade">
+					{{>posts}}
+				</div>
+				<div id="map" class="tab-pane fade">
+					{{>map}}
+				</div>
+				</div>
+				</tr>
+			</td>
+			<td id = "leaderboarddiv">
+				<div id="leaderboard">
+					<p id="head">Leaderboard </p>
+					{{>leaderboard}}
+				</div>
+			</td>
+			</tr></table>
+</template>
+
+
+
+<template name="leaderboard">
+<div class="boardOfPlayers">
+	{{first}}
+	{{#each players}}
+	    {{#if isFirst}}
+		<div id="leaderboard-player-1">
+		<span class="player">
+		<i class="pull-right">{{> avatar user=this shape ="rounded" size="small"}}</i>
+		<span id="first-lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+		<div class="lboardBio">{{profile.bio}}</div>
+		</span>
+		</div>
+	    {{else}}
+		{{#if isSecond}}
+			<div id="leaderboard-player-2">
+			<span class="player">
+			<i class="pull-right">{{> avatar user=this shape ="rounded" size="small"}}</i>
+			<span id="second-lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+			<div class="lboardBio">{{profile.bio}}</div>
+			</span>
+			</div>
+		{{else}}
+			{{#if isThird}}
+				<div id="leaderboard-player-3">
+				<span class="player">
+				<i class="pull-right">{{> avatar user=this shape ="rounded" size="small"}}</i>
+				<span id="third-lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+				<div class="lboardBio">{{profile.bio}}</div>
+				</span>
+				</div>
+			{{else}}
+				<div id="leaderboard-player">
+				<span class="player">
+				<i class="pull-right">{{> avatar user=this shape ="rounded" size="small"}}</i>
+				<span id="lBoardDisplay">{{profile.name}}: {{profile.score}}</span>
+				<div class="lboardBio">{{profile.bio}}</div>
+				</span>
+				</div>
+			{{/if}}
+		{{/if}}
+	    {{/if}}
+	{{/each}}
+</div>
+</template>
+
+<template name="login">
+<table class="login-container" align=center><tr>
+<td valign="top" align=center>
+<img src="Logo.png" class="logo">
+<p id="about">
+<img src="info.png" class="img">
+<span class="info"><b>Project E.N.D.A</b> is a real world treasure hunt.
+Begin solving riddles and puzzles to find the location and go on an 
+adventre exploring all of <b>Galway City</b>.<br><br> Once you reach your
+location you will find a QR code that you must scan to complete your 
+challange and move onto your next adventure. <br><br>Compete with other 
+players to get to the top of the leaderboard and win prizes along the way!. 
+<br>So what are you waiting for? <br><br>Come along!</span>
+</p>
+<div class="project"> PROJECT</div><div class="enda"> E.N.D.A</div>
+<p class="subtext">Exciting New Data Adventure</p>
+<div id="login-screen">
+	{{>loginButtons}}
+</div>
+</td>
+</tr></table>
+</template>
+
+
+
+<template name="navigation">
+<ul class="nav nav-tabs">
+  <li class="active nav-item">
+	<a data-toggle="tab" href="#challenge" class="navchange">Challenge</a>
+  </li>
+  <li class="nav-item">
+	<a data-toggle="tab" href="#comments" class="navchange">Comments</a>
+  </li>
+  <li class="nav-item">
+	<a data-toggle="tab" href="#map" class="navchange">Map</a>
+  </li>
+</ul>
+<ul class="nav nav-tabs logout-align">
+  <li class="nav-item logout-align">
+	<a data-toggle="tab" href="#" class="logout navchange">Logout</a>
+  </li>
+</ul>
+
+</template>
+
+
+
+<template name="posts">
+	
+	<div id="commentBox">
+		<form class="form-horizontal" role="form" id="postForm">
+			<textarea class="form-control required" rows="3" id="inputPost" placeholder="Have your say here..." maxlength="140"></textarea>
+			<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
+			<button type="submit" class="btn" id="sub">Post</button>
+		</form>
+	</div>
+	<div id="cDisplay">
+	<div id="div2">
+		{{#each posts}}
+			<div class="comPlace">
+				<div class="row">
+				<div class="comTime col-sm-3 pull-right">
+					{{timeDiff (date)}}
+				</div>
+				<div class="col-sm-1 pull-left">
+					{{> avatar userId=createdBy shape="rounded" size="small"}}
+				</div>
+				<div class="comName">
+					{{creator (createdBy)}}			
+				</div>
+				</div>
+				<div class="row spacer">
+				
+					<div class="comText" id="post{{_id}}">
+							{{post}}
+					</div>
+				</div>
+				
+			</div>
+		{{/each}}
+	</div>
+	</div>
+	
+</template>
+
+
+
+<template name="challenge">
+	<div class="challSubmit">
+	<p class="challText">Enter code here:</p>
+		<form id="challAnswer">
+			<input type="text" placeholder="Enter Code Here" id="answer" class="form-control challAnswer">
+			<button type="submit" class="btn submitAns" id="submitAnswer"><i class="glyphicon glyphicon-arrow-right"></i></button>
+		</form>
+	</div>
+	<img src={{puzzles}} id="cImage">
+</template>
+
+
+
+<template name="map">
+<div class="google-maps">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9544.082465814194!2d-9.056957850937142!3d53.27125025080445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sie!4v1490869002409" width="600" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+</template>
+
+<template name="profile">
+	<table class="login-container" align=center><tr>
+	<td width=360px height=540px valign="top" align=center>
+	<div class="mainProfileText">Welcome to <br><b>Project E.N.D.A.</b><br></div>
+	<div class="subProfileText">We just need a few more details.</div>
+		<form id="signUp">
+			<input type="text" placeholder="Name" value={{name}} id="nameAsk" class="form-control" maxlength="20">
+			<textarea placeholder="Bio" value={{bio}} id="bioAsk" class="form-control" maxlength="200"></textarea>
+			<label id="charRemaining" for="inputPost">{{charsRemaining}}</label>
+			<input type="text" placeholder="Link to avatar" value={{avatar}} id="linkAsk" class="form-control">
+			<button type="submit" class="btn btn-primary" id="continue">Continue</button>
+		</form>
+	</td>
+	</tr></table>
+</template>
+
+<template name="home">
+	{{#if currentUser}}
+		{{#if name}}
+			{{> dashboard}}
+		{{else}}
+			{{> profile}}
+		{{/if}}
+	{{else}}
+		{{> login}}
+	{{/if}}
+</template>
