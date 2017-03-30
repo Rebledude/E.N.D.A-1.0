@@ -28,10 +28,9 @@ Template.dashboard.onCreated(function dashboardOnCreated() {
 	this.state = new ReactiveDict();
 	Meteor.subscribe('users');
 	Meteor.subscribe('userPosts');
-	
 });
 
-Template.posts.onRendered(function() {
+Template.dashboard.onRendered(function() {
   $("[data-toggle]").click(function() {
     var toggle_el = $(this).data("toggle");
     $(toggle_el).toggleClass("open-sidebar");
@@ -43,6 +42,20 @@ Template.profile.helpers({
 		return Session.get('CharactersRemaining');
 	}
 });
+
+Template.profile.helpers({
+  name: function() {
+    return Meteor.user().profile.oldName;
+    return Meteor.user().profile.oldName;
+  },
+  bio: function() {
+	return Meteor.user().profile.bio;
+  },
+  link: function() {
+	return Meteor.user().profile.avatar;
+  }
+});
+
 Template.profile.events({
 	'submit #signUp': function(event){
 		event.preventDefault();
@@ -50,7 +63,7 @@ Template.profile.events({
 		var bio=event.target.bioAsk.value;
 		var avatar=event.target.linkAsk.value;
 		event.target.reset();
-		Session.set("CharactersRemaining", 200 + "characters remaining");
+		Session.set("CharactersRemaining", 200 + " characters remaining");
 		if(name!=""){
 			Meteor.call('userInfo', name, bio, avatar)
 		}
@@ -76,7 +89,6 @@ Template.leaderboard.helpers({
 			else if(index===2)
 				player.isThird = true;
 			return player;
-			
 		});
 	}
 });
@@ -98,26 +110,25 @@ Template.home.helpers({
 
 Template.challenge.helpers({
 	puzzles: function(){
- 	switch(Meteor.user().profile.score){
-		case 0:
- 			var img = 'g.png';
- 			return img;
- 		case 1:
- 			var img = '44.png';
- 			return img;
-		case 2:
- 			var img = 'la.jpg';
- 			return img;
+	switch(Meteor.user().profile.score){
+ 		case 0:
+  			var img = 'n5SD2.png';
+  			return img;
+  		case 1:
+  			var img = 'guq0f.png';
+  			return img;
+ 		case 2:
+  			var img = 'ocMY0.png';
+  			return img;
 		case 3:
- 			var img = 'smacs.jpg';
- 			return img;
-		case 4:
- 			var img = 'spch.png';
- 			return img;
- 		default:
- 			console.log("error with puzzles");
- 	}
-	}
+  			var img = '8V8Ty.png';
+  			return img;
+ 		case 4:
+  			var img = 'LfCvc.png';
+  			return img;
+  		default:
+  			console.log("error with puzzles");
+	}}
 });
 
 Template.posts.helpers({
@@ -163,7 +174,7 @@ Template.posts.events({
 		event.preventDefault();
 		var post = event.target.inputPost.value;
 		event.target.reset();
-		Session.set("CharactersRemaining", 140 + "characters remaining");
+		Session.set("CharactersRemaining", 140 + " characters remaining");
 		if(post == ''){
 			console.log("error")
 		}else{

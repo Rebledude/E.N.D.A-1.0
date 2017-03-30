@@ -19,75 +19,23 @@ div.profiler{
 .warning{
 	border-color: #ff0000;
 }
-#settings{
-	float:right;
-	border: none;
-	background-color: rgba(245,245,247, 0.75);
-}
-#settings clicked {
-	border: none;
-	background-color: rgba(245,245,247, 0.75);
-}
-.bioDisplay{
-	float:left;
-	height: 70px;
-	padding: 2px;
-	margin-top:-10px;
-	width: 80%;
-	overflow:hidden;
-}
-
 a {
 	color:#585d66 !important;
 }
-.cText {
-	width: 60%;
-	margin-left: 20px;
-	color: #c98600;
-}
-
-.well {
-	margin-left:5px;
-	width: 96%;
-	padding:0px;
-	min-height:50px;
-	
-}
-
-#home-icon {
-	width: 50px;
-	height: 50px;
-	margin-left: -15px;
-	margin-right: 5px;
-	margin-top: -15px;
-}
-
-.player{
-}
-
-#head {
-	text-align:center;
-	color: #585d66;
-	font-size: 20px;
-}
-
 #login-dropdown-list input:first-of-type {
 	margin: 8px 0;
 	border-radius: 0px;
 }
-
 #login-dropdown-list input:last-of-type {
 	margin: 8px 0;
 	border-radius: 0px;
 }
-
 input[type=email], input[type=password] {
 	padding: 12px 20px;
 	display: block;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 }
-
 #login-buttons-password {
 	border-radius: 0px;
 }
@@ -316,6 +264,7 @@ input[type=email], input[type=password] {
 
 /*profile*/
 #profile {
+	min-height: 349px;
 	height: 25%;
 	width: 99%;
 	margin: 5px;
@@ -333,20 +282,35 @@ input[type=email], input[type=password] {
 	margin: 5px;
 }
 #name {
-	top: 90px;
+	top: 190px;
 	position: relative;
-	margin-left: 5px;
+	margin-left: -225px;
 	color: #585d66;
 	font-size: 50px;
 }
-
+#settings{
+	font-size: 30px;
+	float: left;
+	margin-left: 100px;
+	border: none;
+	background-color: rgba(245,245,247, 0);
+}
+.bioDisplay{
+	font-size: 25px;
+	float:left;
+	margin-left: 200px;
+	margin-top: -50px;
+	height: 150px;
+	width: 70%;
+	overflow:hidden;
+}
 /*content*/
 #main {
 	width: 100%;
 	min-width: 675px;
 	height: 100%;
 	position: absolute;
-	top: 25%;
+	top: 350px;
 	margin-top: -73px;
 }
 .portal {
@@ -377,12 +341,11 @@ input[type=email], input[type=password] {
 #cImage{
 	display: block;
 	margin: auto;
-	padding: 20px;
   	max-width: 95%;
 	max-height: 75%;
 }
 .challText {
-	margin-top: 30px;
+	margin-top: 100px;
 	font-size: 40px;
 }
 .challSubmit {
@@ -403,7 +366,7 @@ input[type=email], input[type=password] {
 	border-radius: 3px;
 }
 #comments{
-	height: 482px;
+	height: 70%;
 }
 #commentBox{
 	height: auto;
@@ -416,6 +379,10 @@ input[type=email], input[type=password] {
 	margin: 5px;
 	display: inline-block;
 	resize: none;
+}
+#charRemaining {
+	padding-left: 20px;
+	font-size: 26px;
 }
 #sub {
 	width: 20%;
@@ -431,12 +398,33 @@ input[type=email], input[type=password] {
 	background-color: #8e8ea4 !important;
 }
 #cDisplay{
-	height: 300px;
+	margin-top: 100px;
+	height: 60%;
 	position:relative;
 }
 #div2 {
 	max-height:100%;
 	overflow: auto;
+}
+.comPlace {
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+	border-top: 1px solid #000000;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+}
+.comText {
+	font-size: 36px;
+	margin-left: 12%;
+	width: 88%;
+	color: #c98600;
+}
+.comTime {
+	font-size: 24px;
+}
+.comName {
+	margin-left: 12%;
+	font-size: 40px;
 }
 
 /*leaderboard*/
@@ -445,6 +433,8 @@ input[type=email], input[type=password] {
 	overflow-y: auto;
 }
 #head {
+	text-align:center;
+	color: #585d66;
 	font-size: 50px;
 }
 #leaderboard {
@@ -462,35 +452,93 @@ input[type=email], input[type=password] {
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
 	padding: 10px;
 }
-#leaderboard-player{
-	height: auto;
-	padding: 20px;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-}
-#leaderboard-player:last-child{
-	height: auto;
-	padding: 20px;
-	margin-bottom: 30px;
-}
 #lBoardDisplay{
+	padding-left: 10px;
+	font-size: 40px;
 	color:#585d66;
-	font-size: 36px;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#leaderboard-player-1 {
+	border-left: 8px solid #FFD700;
+	border-top: 1px solid #585d66;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto;
+	margin:10px;
 }
 #first-lBoardDisplay{
-	font-size: 42px;
+	padding-left: 5px;
+	font-size: 43px;
+	font-weight: 500;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #C39953;
+}
+#leaderboard-player-1:hover .lboardBio{
+	display: block;
+	max-height: 200px;
+	opacity: 1;
+}
+#leaderboard-player-2 {
+	border-left: 8px solid #C0C0C0;
+	border-top: 1px solid #585d66;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto;
+	margin:10px;
 }
 #second-lBoardDisplay{
-	font-size:40px;
+	padding-left: 5px;
+	font-size: 40px;
+	font-weight: 500;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #C0C0C0;
+}
+#leaderboard-player-2:hover .lboardBio{
+	display: block;
+	max-height: 200px;
+	opacity: 1;
+}
+#leaderboard-player-3 {
+	padding-left: 5px;
+	border-left: 8px solid #cd7f32;
+	border-top: 1px solid #585d66;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto;
+	margin:10px;
 }
 #third-lBoardDisplay{
-	font-size:38px;
+	padding-left: 5px;
+	font-size: 40px;
+	font-weight:500;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #6C541E;
+}
+#leaderboard-player-3:hover .lboardBio{
+	display: block;
+	max-height: 200px;
+	opacity: 1;
+}
+#leaderboard-player{
+	border-left: 4px solid #585d66;
+	border-top: 1px solid #585d66;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto;
+	margin:10px;
+}
+#leaderboard-player:hover .lboardBio{
+	display: block;
+	max-height: 400px;
+	opacity: 1;
+}
+.lboardBio {
+	padding-top: 2px;
+	padding-left: 30px;
+	font-size: 32px;
+	opacity: 0;
+	max-height: 0px;
+    transition: all 2s ease;
+}
+.player .avatar, .player .avatar-small, .player .avatar-rounded{
+	right: 15px;
 }
 .pull-right {
 	margin-right: 20px !important;
@@ -769,6 +817,19 @@ input[type=email], input[type=password] {
 	position: relative;
 	margin: 5px;
 }
+#settings{
+	float:right;
+	border: none;
+	background-color: rgba(245,245,247, 0.75);
+}
+.bioDisplay{
+	float:left;
+	height: 70px;
+	padding: 2px;
+	margin-top:-10px;
+	width: 80%;
+	overflow:hidden;
+}
 /*content*/
 #main {
 	width: 70%;
@@ -806,8 +867,11 @@ input[type=email], input[type=password] {
   	max-width: 95%;
 	max-height: 75%;
 }
+.challText {
+	margin-top: 20px;
+}
 .challSubmit {
-	height: 25%;
+	height: 20%;
 	text-align: center;
 }
 .challAnswer {
@@ -824,18 +888,21 @@ input[type=email], input[type=password] {
 }
 /*comments*/
 #comments{
-	height: 482px;
+	height: auto;
 }
 #commentBox{
 	height: 150px;
-	width: 100%;
-}	
+	width: 98%;
+}
 #inputPost {
 	width: 100%;
 	max-width: 100%;
 	max-height: 74px;
 	margin: 5px;
 	display: inline-block;
+}
+#charRemaining {
+	padding-left: 10px;
 }
 #sub {
 	float:right;
@@ -851,11 +918,30 @@ input[type=email], input[type=password] {
 #cDisplay{
 	left: 4px;
 	height: 330px;
+	width: 99%;
 	position:relative;
 }
 #div2 {
 	max-height:100%;
 	overflow: auto;
+}
+.comPlace {
+	border-top: 1px solid #000000;
+	padding: 10px;
+	width: 99%;
+	min-height: 50px;
+}	
+.comText {
+	padding-left: 8%;
+	width: 93%;
+	color: #c98600;
+}
+.comTime {
+	font-size: 14px;
+}
+.comName {
+	padding-left: 1.5%;
+	Font-size: 20px;
 }
 #name {
 	margin-left: 5px;
@@ -867,6 +953,11 @@ input[type=email], input[type=password] {
 .boardOfPlayers {
 	height: 95%;
 	overflow-y: auto;
+}
+#head {
+	text-align:center;
+	color: #585d66;
+	font-size: 20px;
 }
 .leaderboard-tab {
 	display: none;
@@ -883,29 +974,93 @@ input[type=email], input[type=password] {
 	width: 30%;
 }
 #lBoardDisplay{
+	padding-left: 5px;
+	font-size: 16px;
 	color:#585d66;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
-#first-lBoardDisplay{
-	font-size: 17px;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #C39953;
-}
-#second-lBoardDisplay{
-	font-size:16px
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #C0C0C0;
-}
-#third-lBoardDisplay{
-	font-size:15px;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #6C541E;
-}
-#leaderboard-player{
+#leaderboard-player-1 {
+	border-left: 4px solid #FFD700;
+	border-top: 1px solid #585d66;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	height: auto;
 	margin:10px;
+}
+#first-lBoardDisplay{
+	padding-left: 5px;
+	font-size: 18px;
+	font-weight:600;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#leaderboard-player-1:hover .lboardBio{
+	display: block;
+	max-height: 200px;
+	opacity: 1;
+}
+#leaderboard-player-2 {
+	border-left: 4px solid #C0C0C0;
+	border-top: 1px solid #585d66;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto;
+	margin:10px;
+}
+#second-lBoardDisplay{
+	padding-left: 5px;
+	font-size:16px;
+	font-weight:600;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#leaderboard-player-2:hover .lboardBio{
+	display: block;
+	max-height: 200px;
+	opacity: 1;
+}
+#leaderboard-player-3 {
+	padding-left: 5px;
+	border-left: 4px solid #cd7f32;
+	border-top: 1px solid #585d66;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto;
+	margin:10px;
+}
+#third-lBoardDisplay{
+	padding-left: 5px;
+	font-size:16px;
+	font-weight:600;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#leaderboard-player-3:hover .lboardBio{
+	display: block;
+	max-height: 200px;
+	opacity: 1;
+}
+#leaderboard-player{
+	border-left: 2px solid #585d66;
+	border-top: 1px solid #585d66;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto;
+	margin:10px;
+}
+#leaderboard-player:hover .lboardBio{
+	display: block;
+	max-height: 200px;
+	opacity: 1;
+}
+.lboardBio {
+	padding-top: 2px;
+	padding-left: 10px;
+	font-size: 12px;
+	opacity: 0;
+	max-height: 0px;
+    transition: all 2s ease;
+}
+#leaderboard-player:last-child{
+	border-bottom: 1px solid #585d66;
+	padding-bottom: 10px;
 }
 #sidebar {
 	display:none;

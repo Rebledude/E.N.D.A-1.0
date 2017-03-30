@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 
   // code to run on server at startup
 		Meteor.startup(function () {
- 		Meteor.absoluteUrl.defaultOptions.rootUrl = 'http://danu7.it.nuigalway.ie:8629/';
+ 		Meteor.absoluteUrl.defaultOptions.rootUrl = 'http://danu7.it.nuigalway.ie:8652/';
  	});
   	
   	Meteor.publish('users', function (){
@@ -21,6 +21,7 @@ Meteor.methods({
 	'userInfo':function(name, bio, avatar){
 		Meteor.users.update(this.userId, {
 		  $set:{"profile.name":name,
+			"profile.oldName":name,
 			"profile.bio":bio,
 			"profile.avatar":avatar
 			},
@@ -28,8 +29,7 @@ Meteor.methods({
 	},
 	'settings':function(){
 		Meteor.users.update(this.userId,{
-			$set:{"profile.name": "null"
-			},
+			$set:{"profile.name": "null"},
 		});
 	},
 	'insertPost':function(post){
