@@ -423,8 +423,21 @@ input[type=email], input[type=password] {
 	font-size: 24px;
 }
 .comName {
-	margin-left: 12%;
+	margin-left: 100px;
 	font-size: 40px;
+}
+.google-maps {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /*leaderboard*/
@@ -932,7 +945,7 @@ input[type=email], input[type=password] {
 	min-height: 50px;
 }	
 .comText {
-	padding-left: 8%;
+	padding-left: 60px;
 	width: 93%;
 	color: #c98600;
 }
@@ -940,7 +953,7 @@ input[type=email], input[type=password] {
 	font-size: 14px;
 }
 .comName {
-	padding-left: 1.5%;
+	padding-left: 50px;
 	Font-size: 20px;
 }
 #name {
@@ -949,6 +962,20 @@ input[type=email], input[type=password] {
 	font-size: 20px;
 	float:left;
 }
+.google-maps {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
 /*leaderboard*/
 .boardOfPlayers {
 	height: 95%;
