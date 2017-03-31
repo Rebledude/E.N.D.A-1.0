@@ -43,6 +43,13 @@ Template.profile.helpers({
 	}
 });
 
+Template.challenge.events({
+	'click #submitAnswer': function(){
+		var answer= document.getElementById('answer').value;
+		Meteor.call('puzzleCheck', answer);
+	}
+});
+
 Template.profile.helpers({
   name: function() {
     return Meteor.user().profile.oldName;
